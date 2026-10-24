@@ -1,25 +1,63 @@
 aid: trygatsby-com
+
 name: Gatsby
-description: 'Gatsby is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by techstars) and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Gatsby is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio; backed by techstars) and added to the
+  network as a stub for full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/trygatsby-com/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-24 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-24'
+
 modified: '2026-10-24'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- techstars
+
 common:
+- type: Hosts
+  url: hosts/trygatsby-com-hosts.yml
+- type: DomainSecurity
+  url: security/trygatsby-com-domain-security.yml
 - type: Website
   url: https://trygatsby.com/
+
+apis:
+- name: Gatsby API
+  description: Gatsby provides a static site generator and does not expose a public API surface.
+  humanURL: https://www.gatsbyjs.com/docs/reference/graphql-data-layer/
+  baseURL: null
+  aid: trygatsby-com:gatsby-api
+
+x-backed-by:
+- techstars
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Docs are rendered via JavaScript and no machine‑readable spec was found.
+  evidence:
+  - url: https://www.gatsbyjs.com/docs/reference/graphql-data-layer/
+    status: 200
+  checked: '2026-10-24'
+x-enrichment:
+  date: '2026-10-24'
+  status: enriched
+  artifacts_added: 9
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
